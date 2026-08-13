@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavish Maurya | Professional Portfolio</title>
+    <style>
+        /* Google Fonts Import for a Professional Look */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Modern Dark Gradient Background */
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main Content Styling */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            background: #ffffff20;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #00d2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: #00d2ff;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #d1d1d1;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Call to Action Button */
+        .btn {
+            text-decoration: none;
+            padding: 12px 35px;
+            background: #00d2ff;
+            color: #0f2027;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #3a7bd5;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 210, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Footer Styling */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        footer a {
+            color: #00d2ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d2ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-pic">🚀</div>
+        
+        <h1>Hi, I'm <span>Lavish</span></h1>
+        <p class="subtitle">Welcome to my digital space. I am a creative professional passionate about building beautiful and modern web experiences.</p>
+        
+        <a href="https://instagram.com/lavishmaurya0009" class="btn" target="_blank">Let's Connect</a>
+    </div>
+
+    <footer>
+        <p>Made by <strong>Lavish</strong> | Connect: <a href="https://instagram.com/lavishmaurya0009" target="_blank">@lavishmaurya0009</a></p>
+    </footer>
+
+</body>
+</html>
