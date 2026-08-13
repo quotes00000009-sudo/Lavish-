@@ -3,143 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavish Maurya | Professional Portfolio</title>
+    <title>Lavish Maurya | Premium Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Google Fonts Import */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+        /* --- CSS STYLING --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            /* Modern Dark Gradient Background */
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Main Content Styling */
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            background: #ffffff20;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid #00d2ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            background-color: #050505;
             color: #ffffff;
-            letter-spacing: 1px;
+            overflow-x: hidden;
         }
 
-        h1 span {
-            color: #00d2ff;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff007a;
+            border-radius: 10px;
         }
 
-        p.subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #d1d1d1;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
-        /* Social Media Buttons */
-        .social-buttons {
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
             display: flex;
-            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav .logo span {
+            color: #ff007a;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff007a;
+        }
+
+        /* Sections General */
+        section {
+            min-height: 100vh;
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Hero Section */
+        #home {
+            background: radial-gradient(circle at center, #1a0014 0%, #050505 100%);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 5vw;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff007a, #7928ca, #ff007a);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 5s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.8;
+        }
+
+        /* Scroll Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #ff007a;
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        /* Glassmorphism Cards for About/Services */
+        #about {
+            background: #0a0a0a;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff007a;
+            box-shadow: 0 20px 50px rgba(255, 0, 122, 0.2);
+        }
+
+        .glass-card p {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #050505;
+        }
+
+        .social-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        .btn {
+        .social-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
             text-decoration: none;
-            padding: 12px 30px;
-            background: #00d2ff;
-            color: #0f2027;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            background: transparent;
+            border: 2px solid #fff;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            z-index: 1;
         }
 
-        .btn:hover {
-            background: #3a7bd5;
-            color: white;
-            box-shadow: 0 8px 20px rgba(0, 210, 255, 0.4);
-            transform: translateY(-3px);
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background: #ff007a;
+            transition: 0.4s;
+            z-index: -1;
         }
 
-        /* Footer Styling */
+        .social-btn:hover::before {
+            width: 100%;
+        }
+
+        .social-btn:hover {
+            border-color: #ff007a;
+            box-shadow: 0 0 20px #ff007a;
+        }
+
+        .btn-telegram::before {
+            background: #0088cc;
+        }
+        .btn-telegram:hover {
+            border-color: #0088cc;
+            box-shadow: 0 0 20px #0088cc;
+        }
+
+        /* Footer */
         footer {
-            padding: 20px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            background: #000;
+            border-top: 1px solid #222;
         }
 
-        footer p {
-            margin: 5px 0;
-            font-size: 1rem;
-            color: #cccccc;
+        footer h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
-        footer a {
-            color: #00d2ff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+        footer h2 strong {
+            color: #ff007a;
+            font-weight: 700;
         }
 
-        footer a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px #00d2ff;
+        /* Scroll Animations Class */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Hide menu on very small screens for clean look */
+            .hero-title { font-size: 3rem; }
+            section { padding: 80px 5%; }
+            .glass-card { padding: 30px; }
+            .social-btn { padding: 12px 25px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-pic">🚀</div>
-        
-        <h1>Hi, I'm <span>Lavish</span></h1>
-        <p class="subtitle">Welcome to my digital space. I am a creative professional passionate about building beautiful and modern web experiences.</p>
-        
-        <div class="social-buttons">
-            <a href="https://instagram.com/lavish._.maurya" class="btn" target="_blank">Instagram</a>
-            <a href="https://t.me/lavishmaurya0009" class="btn" target="_blank">Telegram</a>
+    <nav>
+        <a href="#home" class="logo">LM<span>.</span></a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Connect</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1 class="hero-title hidden">I am Lavish</h1>
+        <p class="hero-subtitle hidden">A creative mind curating digital aesthetics. Welcome to my personal space where vision meets reality.</p>
+        <a href="#about" class="scroll-down">↓</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title hidden">The Vibe</h2>
+        <div class="glass-card hidden">
+            <p>I don't just exist, I create an impact. This space is dedicated to my journey, my aesthetics, and the things that inspire me. Whether it's style, tech, or art, I believe in keeping it premium and standing out from the crowd.</p>
         </div>
-    </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title hidden">Get in Touch</h2>
+        <p class="hero-subtitle hidden">Drop a message or follow my lifestyle.</p>
+        
+        <div class="social-container hidden">
+            <a href="https://instagram.com/lavish._.maurya" class="social-btn" target="_blank">Instagram</a>
+            <a href="https://t.me/lavishmaurya0009" class="social-btn btn-telegram" target="_blank">Telegram</a>
+        </div>
+    </section>
 
     <footer>
-        <p>Made by <strong>Lavish</strong></p>
-        <p>Insta: <a href="https://instagram.com/lavish._.maurya" target="_blank">@lavish._.maurya</a> | Telegram: <a href="https://t.me/lavishmaurya0009" target="_blank">@lavishmaurya0009</a></p>
+        <h2>Made by <strong>Lavish</strong></h2>
     </footer>
+
+    <script>
+        // Ye code scroll karne par elements ko fade-in aur slide-up karta hai
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 
 </body>
 </html>
